@@ -1,0 +1,844 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f7faf7;
+    color: #26382c;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    height: 75px;
+    background: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #28784c;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #33443a;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #28784c;
+}
+
+button {
+    font-family: inherit;
+}
+
+.donate-top,
+.primary-btn {
+    border: none;
+    background: #28784c;
+    color: white;
+
+    padding: 13px 22px;
+
+    border-radius: 25px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+.donate-top:hover,
+.primary-btn:hover {
+    background: #1c5d3b;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 650px;
+
+    padding: 70px 7%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 60px;
+}
+
+.hero-content {
+    width: 52%;
+}
+
+.tag {
+    background: #e3f3e7;
+    color: #28784c;
+
+    padding: 9px 16px;
+
+    border-radius: 20px;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: 55px;
+    line-height: 1.1;
+
+    margin: 25px 0;
+}
+
+.hero h1 span {
+    color: #28784c;
+}
+
+.hero-content > p {
+    color: #68756d;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+
+    margin-top: 30px;
+}
+
+.secondary-btn {
+    padding: 13px 22px;
+
+    border: 2px solid #28784c;
+
+    border-radius: 25px;
+
+    background: white;
+
+    color: #28784c;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+.stats {
+    display: flex;
+    gap: 40px;
+
+    margin-top: 40px;
+}
+
+.stats h3 {
+    color: #28784c;
+    font-size: 22px;
+}
+
+.stats p {
+    color: #68756d;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.hero-image {
+    width: 48%;
+
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 470px;
+
+    object-fit: cover;
+
+    border-radius: 30px;
+}
+
+.image-label {
+    position: absolute;
+
+    left: 25px;
+    bottom: 25px;
+
+    background: white;
+
+    padding: 15px 22px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+
+    font-weight: bold;
+}
+
+
+/* ================= SECTION ================= */
+
+.section-title {
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+.section-title p {
+    color: #e38b32;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+.section-title h2 {
+    font-size: 34px;
+
+    margin-top: 8px;
+}
+
+
+/* ================= FEATURES ================= */
+
+.features {
+    background: white;
+
+    padding: 80px 7%;
+}
+
+.feature-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 22px;
+}
+
+.feature-card {
+    background: #f7faf7;
+
+    padding: 30px 20px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.feature-icon {
+    font-size: 42px;
+
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: #68756d;
+
+    line-height: 1.6;
+
+    min-height: 75px;
+}
+
+.feature-card button {
+    border: none;
+
+    background: none;
+
+    color: #28784c;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* ================= DONATE ================= */
+
+.donate-section {
+    padding: 90px 7%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 70px;
+}
+
+.donate-image,
+.donate-text {
+    width: 50%;
+}
+
+.donate-image img {
+    width: 100%;
+    height: 400px;
+
+    object-fit: cover;
+
+    border-radius: 25px;
+}
+
+.orange-title {
+    color: #e38b32;
+
+    font-weight: bold;
+
+    font-size: 14px;
+}
+
+.donate-text h2 {
+    font-size: 40px;
+
+    margin: 15px 0;
+}
+
+.donate-text > p {
+    color: #68756d;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+
+/* ================= FIND FOOD ================= */
+
+.find-section {
+    padding: 90px 7%;
+
+    background: white;
+}
+
+.find-description {
+    color: #68756d;
+
+    margin-top: 10px;
+}
+
+
+/* SEARCH */
+
+.search-box {
+    max-width: 1000px;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+
+    gap: 12px;
+}
+
+.search-box input,
+.search-box select {
+    flex: 1;
+
+    padding: 15px;
+
+    border: 1px solid #d4ded7;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: white;
+}
+
+.search-box input:focus,
+.search-box select:focus {
+    border-color: #28784c;
+}
+
+.reset-btn {
+    padding: 15px 20px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #e9eee9;
+
+    color: #26382c;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+.reset-btn:hover {
+    background: #dce6de;
+}
+
+
+/* RESULT */
+
+.result-message {
+    max-width: 1000px;
+
+    margin: 0 auto 25px;
+
+    padding: 13px 18px;
+
+    background: #e8f5eb;
+
+    color: #28784c;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+}
+
+
+/* FOOD GRID */
+
+.food-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.food-card {
+    background: #f7faf7;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+
+    transition: 0.3s;
+}
+
+.food-card:hover {
+    transform: translateY(-5px);
+}
+
+.food-card.hidden {
+    display: none;
+}
+
+.food-card img {
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+}
+
+.food-details {
+    padding: 22px;
+}
+
+.available {
+    color: #28784c;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+.food-details h3 {
+    margin: 10px 0;
+}
+
+.food-details p {
+    color: #68756d;
+
+    margin: 8px 0;
+
+    font-size: 14px;
+}
+
+.claim-btn {
+    width: 100%;
+
+    margin-top: 15px;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #28784c;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+.claim-btn:hover {
+    background: #1c5d3b;
+}
+
+.claim-btn.claimed {
+    background: #7a8880;
+
+    cursor: not-allowed;
+}
+
+
+/* NO FOOD */
+
+.no-food {
+    display: none;
+
+    text-align: center;
+
+    padding: 40px;
+
+    color: #68756d;
+
+    font-size: 18px;
+}
+
+.no-food.show {
+    display: block;
+}
+
+
+/* ================= VOLUNTEER ================= */
+
+.volunteer-section {
+    padding: 80px 7%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 60px;
+
+    background: #e8f5eb;
+}
+
+.volunteer-text {
+    width: 50%;
+}
+
+.volunteer-text h2 {
+    font-size: 38px;
+
+    margin: 15px 0;
+}
+
+.volunteer-text > p {
+    color: #68756d;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+.volunteer-section img {
+    width: 45%;
+
+    height: 350px;
+
+    object-fit: cover;
+
+    border-radius: 25px;
+}
+
+
+/* ================= IMPACT ================= */
+
+.impact-section {
+    padding: 90px 7%;
+}
+
+.impact-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.impact-card {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+}
+
+.impact-card span {
+    font-size: 38px;
+}
+
+.impact-card h2 {
+    color: #28784c;
+
+    margin: 15px 0 5px;
+}
+
+
+/* ================= STORIES ================= */
+
+.stories-section {
+    padding: 80px 7%;
+
+    background: white;
+}
+
+.story-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.story-card {
+    background: #f7faf7;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.story-card img {
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+}
+
+.story-card h3 {
+    padding: 20px 20px 5px;
+}
+
+.story-card p {
+    padding: 0 20px 25px;
+
+    color: #68756d;
+
+    line-height: 1.6;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #193b28;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 45px 20px;
+}
+
+footer p {
+    color: #d0ddd4;
+
+    margin-top: 8px;
+}
+
+.copyright {
+    font-size: 13px;
+}
+
+
+/* ================= MODAL ================= */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,0.6);
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 2000;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-box {
+    width: 420px;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    position: relative;
+}
+
+.modal-box h2 {
+    margin-bottom: 10px;
+}
+
+.modal-box p {
+    color: #68756d;
+
+    margin-bottom: 20px;
+}
+
+.modal-box input,
+.modal-box select {
+    width: 100%;
+
+    padding: 13px;
+
+    margin-bottom: 12px;
+
+    border: 1px solid #ccd6ce;
+
+    border-radius: 10px;
+
+    outline: none;
+}
+
+.full-btn {
+    width: 100%;
+}
+
+.close {
+    position: absolute;
+
+    right: 18px;
+
+    top: 10px;
+
+    background: none;
+
+    border: none;
+
+    font-size: 30px;
+
+    cursor: pointer;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width: 900px) {
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        flex-direction: column;
+    }
+
+    .hero-content,
+    .hero-image {
+        width: 100%;
+    }
+
+    .feature-grid,
+    .food-grid,
+    .story-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .impact-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .donate-section,
+    .volunteer-section {
+        flex-direction: column;
+    }
+
+    .donate-image,
+    .donate-text,
+    .volunteer-text,
+    .volunteer-section img {
+        width: 100%;
+    }
+
+}
+
+
+@media(max-width: 600px) {
+
+    .feature-grid,
+    .food-grid,
+    .story-grid,
+    .impact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 50px 20px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero-image img {
+        height: 350px;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .stats {
+        gap: 18px;
+    }
+
+    .modal-box {
+        width: 90%;
+    }
+
+}

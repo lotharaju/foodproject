@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Don't Waste Food - Donate It</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        🍱 FoodShare
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#donate">Donate Food</a>
+        <a href="#find">Find Food</a>
+        <a href="#volunteer">Volunteer</a>
+        <a href="#impact">Impact</a>
+    </nav>
+
+    <button class="donate-top" onclick="openDonate()">
+        Donate Now ❤️
+    </button>
+
+</header>
+
+
+<!-- ================= HOME ================= -->
+
+<section id="home" class="hero">
+
+    <div class="hero-content">
+
+        <span class="tag">
+            ❤️ Food For Everyone
+        </span>
+
+        <h1>
+            Don't Waste Food.
+            <span>Donate It.</span>
+        </h1>
+
+        <p>
+            Your extra food can become someone's meal.
+            Donate safe surplus food and help people in need.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button
+                class="primary-btn"
+                onclick="openDonate()">
+                🍱 Donate Food
+            </button>
+
+            <button
+                class="secondary-btn"
+                onclick="goToFindFood()">
+                🤝 Find Food
+            </button>
+
+        </div>
+
+        <div class="stats">
+
+            <div>
+                <h3 id="mealCount">1250+</h3>
+                <p>Meals Donated</p>
+            </div>
+
+            <div>
+                <h3 id="donorCount">320+</h3>
+                <p>Donors</p>
+            </div>
+
+            <div>
+                <h3 id="volunteerCount">85+</h3>
+                <p>Volunteers</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-image">
+
+        <img
+        src="https://mmg.whatsapp.net/v/t62.7118-24/833272834_1847762686207367_4685112173305645210_n.enc?ccb=11-4&oh=01_Q5Aa5wEShLihxjEkNh-1nq-DVUM5q7Ug0XS4bCm7CjFLlL4Shg&oe=6AE98ABF&_nc_sid=5e03e0" width="350px" height="250px">
+        
+
+
+        <div class="image-label">
+            ❤️ Every meal matters
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features">
+
+    <div class="section-title">
+
+        <p>WHAT WE DO</p>
+
+        <h2>
+            Help. Share. Make A Difference.
+        </h2>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🍱
+            </div>
+
+            <h3>
+                Donate Food
+            </h3>
+
+            <p>
+                Share your safe surplus food with people who need it.
+            </p>
+
+            <button onclick="openDonate()">
+                Donate Now →
+            </button>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🤝
+            </div>
+
+            <h3>
+                Find Food
+            </h3>
+
+            <p>
+                Find available food donations near your location.
+            </p>
+
+            <button onclick="goToFindFood()">
+                Find Food →
+            </button>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🚴
+            </div>
+
+            <h3>
+                Become a Volunteer
+            </h3>
+
+            <p>
+                Help collect and deliver donated food.
+            </p>
+
+            <button onclick="joinVolunteer()">
+                Join Us →
+            </button>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                📍
+            </div>
+
+            <h3>
+                Donation Map
+            </h3>
+
+            <p>
+                View food donation locations.
+            </p>
+
+            <button onclick="showMap()">
+                View Map →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DONATE ================= -->
+
+<section id="donate" class="donate-section">
+
+    <div class="donate-image">
+
+        <img
+        src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=80"
+        alt="Food donation">
+
+    </div>
+
+
+    <div class="donate-text">
+
+        <p class="orange-title">
+            DONATE FOOD
+        </p>
+
+        <h2>
+            Turn Extra Food Into A Meal
+        </h2>
+
+        <p>
+            Instead of throwing away safe food,
+            donate it to someone who needs it.
+        </p>
+
+        <button
+            class="primary-btn"
+            onclick="openDonate()">
+
+            ❤️ Donate Now
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FIND FOOD ================= -->
+
+<section id="find" class="find-section">
+
+    <div class="section-title">
+
+        <p>AVAILABLE FOOD</p>
+
+        <h2>
+            🤝 Find Food Near You
+        </h2>
+
+        <p class="find-description">
+            Search available food donations and claim a meal.
+        </p>
+
+    </div>
+
+
+    <!-- SEARCH AREA -->
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchFood"
+            placeholder="🔎 Search food name..."
+            onkeyup="searchFood()"
+        >
+
+
+        <select
+            id="locationFilter"
+            onchange="filterFood()">
+
+            <option value="all">
+                📍 All Locations
+            </option>
+
+            <option value="vizag">
+                Vizag
+            </option>
+
+            <option value="kakinada">
+                Kakinada
+            </option>
+
+            <option value="hyderabad">
+                Hyderabad
+            </option>
+
+        </select>
+
+
+        <button
+            onclick="resetFood()"
+            class="reset-btn">
+
+            🔄 Reset
+
+        </button>
+
+    </div>
+
+
+    <!-- RESULT MESSAGE -->
+
+    <div
+        id="resultMessage"
+        class="result-message">
+
+        Showing all available food
+
+    </div>
+
+
+    <!-- FOOD CARDS -->
+
+    <div
+        id="foodContainer"
+        class="food-grid">
+
+
+        <!-- FOOD 1 -->
+
+        <div
+            class="food-card"
+            data-food="rice meals"
+            data-location="vizag">
+
+            <img
+            src="https://static.vecteezy.com/system/resources/previews/066/279/517/large_2x/vegetable-curry-with-rice-in-a-bowl-on-a-white-background-photo.jpg"
+            alt="Rice Meal">
+
+            <div class="food-details">
+
+                <span class="available">
+                    ● Available
+                </span>
+
+                <h3>
+                    Rice & Curry
+                </h3>
+
+                <p>
+                    🍱 20 Meals
+                </p>
+
+                <p>
+                    📍 Vizag
+                </p>
+
+                <p>
+                    ⏰ Available until 7:00 PM
+                </p>
+
+                <button
+                    class="claim-btn"
+                    onclick="claimFood(this, 'Rice & Curry', '20 Meals', 'Vizag')">
+
+                    🤝 Claim Food
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOD 2 -->
+
+        <div
+            class="food-card"
+            data-food="vegetable meals healthy food"
+            data-location="kakinada">
+
+            <img
+            src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80"
+            alt="Healthy Meal">
+
+            <div class="food-details">
+
+                <span class="available">
+                    ● Available
+                </span>
+
+                <h3>
+                    Healthy Vegetable Meals
+                </h3>
+
+                <p>
+                    🍱 15 Meals
+                </p>
+
+                <p>
+                    📍 Kakinada
+                </p>
+
+                <p>
+                    ⏰ Available until 6:30 PM
+                </p>
+
+                <button
+                    class="claim-btn"
+                    onclick="claimFood(this, 'Healthy Vegetable Meals', '15 Meals', 'Kakinada')">
+
+                    🤝 Claim Food
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOD 3 -->
+
+        <div
+            class="food-card"
+            data-food="food pack meals"
+            data-location="hyderabad">
+
+            <img
+            src="https://freshlyfruits.in/wp-content/uploads/2026/05/311f82ed-2969-411b-b61c-3f59ac4494c9.png"
+            alt="Food Pack">
+
+            <div class="food-details">
+
+                <span class="available">
+                    ● Available
+                </span>
+
+                <h3>
+                    Fresh Food Pack
+                </h3>
+
+                <p>
+                    🍱 10 Packs
+                </p>
+
+                <p>
+                    📍 Hyderabad
+                </p>
+
+                <p>
+                    ⏰ Available until 8:00 PM
+                </p>
+
+                <button
+                    class="claim-btn"
+                    onclick="claimFood(this, 'Fresh Food Pack', '10 Packs', 'Hyderabad')">
+
+                    🤝 Claim Food
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOD 4 -->
+
+        <div
+            class="food-card"
+            data-food="chapati curry dinner"
+            data-location="vizag">
+
+            <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0oDcMjY4J7QIPEkJ-mjzKOEGty6oyH0i3xKijZks7Fde2Wc60HAbXrtM&s=10"
+            alt="Chapati">
+
+            <div class="food-details">
+
+                <span class="available">
+                    ● Available
+                </span>
+
+                <h3>
+                    Chapati & Curry
+                </h3>
+
+                <p>
+                    🍱 25 Meals
+                </p>
+
+                <p>
+                    📍 Vizag
+                </p>
+
+                <p>
+                    ⏰ Available until 9:00 PM
+                </p>
+
+                <button
+                    class="claim-btn"
+                    onclick="claimFood(this, 'Chapati & Curry', '25 Meals', 'Vizag')">
+
+                    🤝 Claim Food
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOD 5 -->
+
+        <div
+            class="food-card"
+            data-food="fruits fruit box"
+            data-location="kakinada">
+
+            <img
+            src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&w=800&q=80"
+            alt="Fruits">
+
+            <div class="food-details">
+
+                <span class="available">
+                    ● Available
+                </span>
+
+                <h3>
+                    Fresh Fruit Box
+                </h3>
+
+                <p>
+                    🍱 12 Boxes
+                </p>
+
+                <p>
+                    📍 Kakinada
+                </p>
+
+                <p>
+                    ⏰ Available until 5:30 PM
+                </p>
+
+                <button
+                    class="claim-btn"
+                    onclick="claimFood(this, 'Fresh Fruit Box', '12 Boxes', 'Kakinada')">
+
+                    🤝 Claim Food
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOD 6 -->
+
+        <div
+            class="food-card"
+            data-food="biryani rice chicken"
+            data-location="hyderabad">
+
+            <img
+            src="https://myfoodstory.com/wp-content/uploads/2022/07/Chicken-Biryani-2.jpg"
+            alt="Biryani">
+
+            <div class="food-details">
+
+                <span class="available">
+                    ● Available
+                </span>
+
+                <h3>
+                    Biryani Meals
+                </h3>
+
+                <p>
+                    🍱 18 Meals
+                </p>
+
+                <p>
+                    📍 Hyderabad
+                </p>
+
+                <p>
+                    ⏰ Available until 9:30 PM
+                </p>
+
+                <button
+                    class="claim-btn"
+                    onclick="claimFood(this, 'Biryani Meals', '18 Meals', 'Hyderabad')">
+
+                    🤝 Claim Food
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- NO RESULT -->
+
+    <div
+        id="noFood"
+        class="no-food">
+
+        😔 No food donations found.
+
+        <br>
+
+        Try another food name or location.
+
+    </div>
+
+</section>
+
+
+<!-- ================= VOLUNTEER ================= -->
+
+<section id="volunteer" class="volunteer-section">
+
+    <div class="volunteer-text">
+
+        <p class="orange-title">
+            JOIN OUR TEAM
+        </p>
+
+        <h2>
+            🚴 Become a Food Volunteer
+        </h2>
+
+        <p>
+            Help collect donated food and deliver it
+            to people who need it.
+        </p>
+
+        <button
+            class="primary-btn"
+            onclick="joinVolunteer()">
+
+            Become a Volunteer
+
+        </button>
+
+    </div>
+
+
+    <img
+    src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1000&q=80"
+    alt="Volunteers">
+
+</section>
+
+
+<!-- ================= IMPACT ================= -->
+
+<section id="impact" class="impact-section">
+
+    <div class="section-title">
+
+        <p>OUR IMPACT</p>
+
+        <h2>
+            Together We Can Make A Difference ❤️
+        </h2>
+
+    </div>
+
+
+    <div class="impact-grid">
+
+        <div class="impact-card">
+
+            <span>🍱</span>
+
+            <h2 id="impactMeals">
+                1250+
+            </h2>
+
+            <p>
+                Meals Donated
+            </p>
+
+        </div>
+
+
+        <div class="impact-card">
+
+            <span>👨‍👩‍👧</span>
+
+            <h2>
+                850+
+            </h2>
+
+            <p>
+                People Helped
+            </p>
+
+        </div>
+
+
+        <div class="impact-card">
+
+            <span>🚴</span>
+
+            <h2 id="impactVolunteers">
+                85+
+            </h2>
+
+            <p>
+                Volunteers
+            </p>
+
+        </div>
+
+
+        <div class="impact-card">
+
+            <span>♻️</span>
+
+            <h2>
+                500+
+            </h2>
+
+            <p>
+                Food Packs Rescued
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STORIES ================= -->
+
+<section class="stories-section">
+
+    <div class="section-title">
+
+        <p>FOOD STORIES</p>
+
+        <h2>
+            Every Donation Tells A Story ❤️
+        </h2>
+
+    </div>
+
+
+    <div class="story-grid">
+
+        <div class="story-card">
+
+            <img
+            src="https://images.unsplash.com/photo-1593113630400-ea4288922497?auto=format&fit=crop&w=800&q=80"
+            alt="Food donation">
+
+            <h3>
+                Sharing Is Caring
+            </h3>
+
+            <p>
+                A simple food donation can bring
+                happiness to another family.
+            </p>
+
+        </div>
+
+
+        <div class="story-card">
+
+            <img
+            src="https://wellness.mcmaster.ca/app/uploads/2020/01/23-SWNL_Photo-Hearders_72_4.jpg"
+            alt="Volunteer">
+
+            <h3>
+                Community Power
+            </h3>
+
+            <p>
+                Volunteers make food collection
+                and delivery possible.
+            </p>
+
+        </div>
+
+
+        <div class="story-card">
+
+            <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-TSuD2P2Ey1_6C-epvbv8GfgHaK7Un8pF5lqx5Sj44Q&s=10"
+            alt="Helping">
+
+            <h3>
+                Small Action, Big Impact
+            </h3>
+
+            <p>
+                Together we can reduce food waste.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h2>
+        🍱 FoodShare
+    </h2>
+
+    <p>
+        Don't Waste Food • Donate It • Share Hope ❤️
+    </p>
+
+    <p class="copyright">
+        © 2026 FoodShare Project
+    </p>
+
+</footer>
+
+
+<!-- ================= DONATE MODAL ================= -->
+
+<div
+    id="donateModal"
+    class="modal">
+
+    <div class="modal-box">
+
+        <button
+            class="close"
+            onclick="closeDonate()">
+
+            ×
+
+        </button>
+
+        <h2>
+            🍱 Donate Food
+        </h2>
+
+        <p>
+            Enter your food details.
+        </p>
+
+
+        <input
+            type="text"
+            id="foodName"
+            placeholder="Food Name">
+
+
+        <input
+            type="number"
+            id="foodQuantity"
+            placeholder="Number of Meals">
+
+
+        <select id="donateLocation">
+
+            <option value="">
+                Select Location
+            </option>
+
+            <option value="Vizag">
+                Vizag
+            </option>
+
+            <option value="Kakinada">
+                Kakinada
+            </option>
+
+            <option value="Hyderabad">
+                Hyderabad
+            </option>
+
+        </select>
+
+
+        <input
+            type="time"
+            id="foodTime">
+
+
+        <button
+            class="primary-btn full-btn"
+            onclick="submitDonation()">
+
+            Submit Donation
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
